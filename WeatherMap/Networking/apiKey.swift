@@ -8,4 +8,4 @@
 
 import Foundation
 
-public let secretKey = ""
+public let secretKey = "fcbf9dba303aeb4bc01fefb2a49b8bb8"

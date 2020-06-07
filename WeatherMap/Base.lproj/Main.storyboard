@@ -19,6 +19,9 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="moodEntered:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="2nS-IN-i7U"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXY-bF-xpB">
                                 <rect key="frame" x="10" y="122" width="414" height="32.5"/>
@@ -124,12 +127,21 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JA0-05-b0P">
+                                <rect key="frame" x="10" y="642.5" width="394" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8gD-ee-PdV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7EB-dP-dNM"/>
                             <constraint firstItem="8gD-ee-PdV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HSN-ow-EEv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JA0-05-b0P" secondAttribute="trailing" constant="10" id="JeR-BR-Jl9"/>
                             <constraint firstItem="NH2-L6-Nmz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="KHK-mF-5oz"/>
+                            <constraint firstItem="JA0-05-b0P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Ls9-yi-vch"/>
+                            <constraint firstItem="JA0-05-b0P" firstAttribute="top" secondItem="NH2-L6-Nmz" secondAttribute="bottom" constant="10" id="Rfp-bj-tgJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NH2-L6-Nmz" secondAttribute="trailing" constant="10" id="Zpz-9b-8y9"/>
                             <constraint firstItem="qXY-bF-xpB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="10" id="cYz-uN-YQi"/>
                             <constraint firstItem="NH2-L6-Nmz" firstAttribute="top" secondItem="qXY-bF-xpB" secondAttribute="bottom" constant="10" id="giz-fT-KBc"/>
@@ -146,6 +158,7 @@
                         <outlet property="humidityLabel" destination="2DO-bN-XDX" id="ILi-ln-WjH"/>
                         <outlet property="locationLabel" destination="qXY-bF-xpB" id="1ih-Iw-lgc"/>
                         <outlet property="moodInput" destination="8gD-ee-PdV" id="cFb-sb-DzZ"/>
+                        <outlet property="moodLabel" destination="JA0-05-b0P" id="VKV-ib-UaR"/>
                         <outlet property="pressureLabel" destination="ZYA-HR-My1" id="xhO-x0-fMV"/>
                         <outlet property="tempLabel" destination="lI2-vw-yz7" id="Ajd-eb-IPM"/>
                         <outlet property="tempMaxLabel" destination="WZF-qR-T2N" id="hzC-fJ-1Oe"/>

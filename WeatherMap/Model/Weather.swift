@@ -8,22 +8,34 @@
 
 import Foundation
 //MARK: Main Struct
-struct Weather{
+struct Weather: Decodable{
     var name: String?
-    var weather: theWeather
-    var main: Main
-    var wind: Wind
-    var clouds: Clouds
+//    var weather: theWeather?
+//    var main: Main?
+//    var wind: Wind?
+//    var clouds: Clouds?
+    
+//    var main: String?
+//    var description: String?
+//    var temp: Double?
+//    var feels_like: Double?
+//    var temp_min: Double?
+//    var temp_max: Double?
+//    var pressure: Double?
+//    var humidity: Double?
+//    var speed: Int?
+//    var deg: Int?
+//    var all: Int?
 }
 
 //MARK: Sub Structs
 //weather
-struct theWeather{
+struct theWeather: Decodable{
     var main: String?
     var description: String?
 }
 
-struct Main{
+struct Main: Decodable{
     var temp: Double?
     var feels_like: Double?
     var temp_min: Double?
@@ -32,11 +44,11 @@ struct Main{
     var humidity: Double?
 }
 
-struct Wind{
+struct Wind: Decodable{
     var speed: Int?
     var deg: Int?
 }
 
-struct Clouds {
+struct Clouds: Decodable{
     var all: Int?
 }
