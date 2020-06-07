@@ -10,7 +10,7 @@ import Foundation
 //MARK: Main Struct
 struct Weather: Decodable{
     var name: String?
-    var weather: theWeather?
+    var weather: [theWeather]
     var main: Main?
     var wind: Wind?
     var clouds: Clouds?

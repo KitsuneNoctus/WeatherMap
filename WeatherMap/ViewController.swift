@@ -56,18 +56,75 @@ class ViewController: UIViewController {
         networkManager.getWeather(lat: "37.7749", lon: "-122.4194"){ result in
             switch result{
             case let .success(weather):
-                self.locationLabel.text = weather.name
-//                self.weatherLabel.text = weather.main
-//                self.weatherDescriptionLabel.text = weather.weather!.description!
-//                self.tempLabel.text = "Temp: \(String(describing: weather.main.temp))"
-//                self.feelsLikeLabel.text = "Feels Like: \(String(describing: weather.main.feels_like))"
-//                self.tempMinLabel.text = "Temp Min: \(String(describing: weather.main.temp_min))"
-//                self.tempMaxLabel.text = "Temp Max: \(String(describing: weather.main.temp_min))"
-//                self.pressureLabel.text = "Pressure: \(String(describing: weather.main.pressure))"
-//                self.humidityLabel.text = "Humidity: \(String(describing: weather.main.humidity))"
-//                self.windSpeedLabel.text = "Wind Speed: \(String(describing: weather.wind.speed))"
-//                self.windAngleLabel.text = "Wind Angle: \(String(describing: weather.wind.deg))"
-//                self.cloudsLabel.text = "Clouds: \(String(describing: weather.clouds.all))"
+                guard let weatherr = weather.name else {
+                    print("No Weather Data")
+                    return
+                }
+                self.locationLabel.text = "Weather: \(weatherr)"
+                guard let desc = weather.weather[0].main else{
+                    print("")
+                    return
+                }
+                self.weatherLabel.text = "Weather: \(desc)"
+                guard let desc2 = weather.weather[0].description else{
+                    print("")
+                    return
+                }
+                self.weatherDescriptionLabel.text = "Description: \(desc2)"
+                
+                guard let temp = weather.main?.temp else{
+                    print("")
+                    return
+                }
+                self.tempLabel.text = "Temp: \(temp)"
+                
+                guard let tempfl = weather.main?.feels_like else{
+                    print("")
+                    return
+                }
+                self.feelsLikeLabel.text = "Feels Like: \(tempfl)"
+                
+                guard let tempMin = weather.main?.temp_min else{
+                    print("")
+                    return
+                }
+                self.tempMinLabel.text = "Temp Min: \(tempMin)"
+                
+                guard let tempMax = weather.main?.temp_max else{
+                    print("")
+                    return
+                }
+                self.tempMaxLabel.text = "Temp Max: \(tempMax)"
+                
+                guard let pressure = weather.main?.pressure else{
+                    print("")
+                    return
+                }
+                self.pressureLabel.text = "Pressure: \(pressure)"
+                
+                guard let humid = weather.main?.humidity else{
+                    print("")
+                    return
+                }
+                self.humidityLabel.text = "Humidity: \(humid)"
+                
+                guard let winds = weather.wind?.speed else{
+                    print("")
+                    return
+                }
+                self.windSpeedLabel.text = "Wind Speed: \(winds)"
+                
+                guard let windd = weather.wind?.deg else{
+                    print("")
+                    return
+                }
+                self.windAngleLabel.text = "Wind Angle: \(windd)"
+                
+                guard let clouds = weather.clouds else{
+                    print("")
+                    return
+                }
+                self.cloudsLabel.text = "Clouds: \(clouds)"
                 
             case let .failure(error):
                 print(error)
