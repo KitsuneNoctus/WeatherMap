@@ -10,22 +10,10 @@ import Foundation
 //MARK: Main Struct
 struct Weather: Decodable{
     var name: String?
-//    var weather: theWeather?
-//    var main: Main?
-//    var wind: Wind?
-//    var clouds: Clouds?
-    
-//    var main: String?
-//    var description: String?
-//    var temp: Double?
-//    var feels_like: Double?
-//    var temp_min: Double?
-//    var temp_max: Double?
-//    var pressure: Double?
-//    var humidity: Double?
-//    var speed: Int?
-//    var deg: Int?
-//    var all: Int?
+    var weather: theWeather?
+    var main: Main?
+    var wind: Wind?
+    var clouds: Clouds?
 }
 
 //MARK: Sub Structs
@@ -45,10 +33,10 @@ struct Main: Decodable{
 }
 
 struct Wind: Decodable{
-    var speed: Int?
-    var deg: Int?
+    var speed: Double?
+    var deg: Double?
 }
 
 struct Clouds: Decodable{
-    var all: Int?
+    var all: Double?
 }
